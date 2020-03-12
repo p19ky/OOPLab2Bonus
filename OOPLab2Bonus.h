@@ -40,6 +40,4 @@ public:
 
 	double abs() const ; //Print the absolute value of our Rational Number
 
-
-
 };

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "OOPLab2Bonus.h"
 #include <vector>
-
+#include "myTests.h"
 using namespace std;
 
 void Rational::set_num(int new_num) //numerator setter
@@ -32,7 +32,7 @@ int Rational::get_denom() const //denominator getter
 
 Rational::Rational() //Default Constructor 
 {
-    set_num(0);
+    set_num(1);
     set_denom(1);
     
 }
@@ -106,12 +106,12 @@ Rational Rational::add(const Rational obj) //Add obj to our Rational Number
 {
     Rational Add;
 
-    Add.numerator = (numerator * obj.denominator) + (denominator * obj.numerator);
-    Add.denominator = denominator + obj.denominator;
+    Add.numerator = (denominator * obj.numerator) + (numerator * obj.denominator);
+    Add.denominator = denominator * obj.denominator;
 
     Add.simplify();
 
-    Add.show_rat();
+    //Add.show_rat();
 
     return Add;
 }
@@ -139,7 +139,7 @@ Rational Rational::div(const Rational obj) //Divide our Rational Number to obj
 
     Div = temp_1.mul(temp_2);
 
-    Div.show_rat();
+    //Div.show_rat();
 
     return Div;
 }
@@ -203,45 +203,9 @@ double Rational::abs() const //Print the absolute value of our Rational Number o
     return result;
 }
 
-void sorti(std::vector<Rational> vecti)
-{
-    typedef vector<Rational>::size_type vector_size;
-    vector_size size = vecti.size();
-
-    for (int i = 0; i < size - 1; i++)
-        for (int j = i + 1; j < size; j++)
-        {
-            double r1 = vecti[i].abs();
-            double r2 = vecti[j].abs();
-            if (r1 > r2)
-            {
-                Rational aux = vecti[i];
-                vecti[i] = vecti[j];
-                vecti[j] = aux;
-            }
-        }
-}
-
-void Summe(std::vector<Rational> vecti)
-{
-    Rational sum;
-
-    typedef vector<Rational>::size_type vector_size;
-    vector_size size = vecti.size();
-
-    for (int i = 0; i < size; i++)
-    {
-        sum = sum.add(vecti[i]);
-    }
-
-    cout << "After the Summation of the Vector of Rational Numbers, The Result is also a Rational Number:\n";
-    sum.show_rat();
-}
-
 
 int main()
 {
-    Rational r1(3, -2);
-    Rational r2(-1, 2);
-
+    myTests();
+    cout << "\nEnd tests.";
 }
