@@ -196,9 +196,9 @@ double Rational::abs() const //Print the absolute value of our Rational Number o
 
     double result = numu / deno;
     
-    cout << "The absolut value of ";
-    Abs.show_rat();
-    cout << "OR " << result;
+    //cout << "The absolut value of ";
+    //Abs.show_rat();
+    //cout << "OR " << result;
 
     return result;
 }

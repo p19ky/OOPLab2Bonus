@@ -18,6 +18,10 @@ void sorti(std::vector<Rational> vecti)
                 vecti[j] = aux;
             }
         }
+
+	for (int i = 0; i < vecti.size(); i++)
+		vecti[i].show_rat();
+	cout << endl;
 }
 
 void Summe(std::vector<Rational> vecti)
@@ -62,10 +66,14 @@ void myTests()
 	cout << "Test sum (all elements)\n";
     Summe(v);
 
+	cout << "Test sort (all elements)\n";
+	sorti(v);
+
 	cout << "Test multiplication (r1 * r2)\n";
 	r1.mul(r2);
 	cout << endl;
 
 	cout << "Test division (r1 / r2)\n";
 	r1.div(r2);
+
 }
