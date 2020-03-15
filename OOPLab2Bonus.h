@@ -3,7 +3,7 @@
 class Rational
 {
 private:
-	 
+
 	int numerator;
 	int denominator;
 
@@ -38,6 +38,6 @@ public:
 
 	void show_rat() const; //Print Rational Number on standard output stream 
 
-	double abs() const ; //Print the absolute value of our Rational Number
+	double abs() const; //Print the absolute value of our Rational Number
 
 };
